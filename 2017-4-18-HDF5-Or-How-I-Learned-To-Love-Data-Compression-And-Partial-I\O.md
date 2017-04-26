@@ -112,7 +112,7 @@ You will notice that bzip2 and zlib compress the data to roughly the same extent
 # spy()
 That's right, I'm bringing Matplotlib's spy() back. 
 
-I use spy() to get a sense of the data's sparsity. Since the data is long and skinny, I transpose it so we can get a better view. Also, I am only capturing the first 1000 rows. Why? Because the dimensions of the dataset are highly skewed which causes the image to get compressed. In other words, the visualization gets crunched so bad that we cannot discern anything useful.
+I use spy() to get a sense of the data's sparsity. Since the data is long and skinny, I transpose it so we can get a better view. Also, I am only capturing the first 1000 rows. Why? Because the dimensions of the dataset are highly skewed which causes the image to get compressed. In other words, the visualization gets crunched so bad that we cannot discern anything useful otherwise.
 ```
 fig = plt.figure(figsize=(15,8))
 plt.spy(X_train.transpose().ix[:, :1000]);
@@ -124,11 +124,10 @@ What are the big takeaways here?
 
 First, if you walk away with nothing else, be aware that HDF5 is a powerful tool that provides on-the-fly compression and partial I/O capabilities. It is so much more than that but knowing that much is a great start.
 
-Secondly, for those newer to zip files, perhaps you learned how to read multiple files zipped together straight into pandas without having to download anything.
+Secondly, for those newer to zip files, perhaps you learned how to read multiple files zipped together straight into pandas without having to download and unzip anything.
 
-Thirdly, for those new to HDF5, maybe you learned how to convert dataframes in-memory or files already on your computer to .h5 using compression.
+Thirdly, for those new to HDF5, hopefully you learned how to convert dataframes in-memory or files already on your computer to .h5 using compression.
 
 And maybe, just maybe, you can start to see how one could take a sparse matrix that just won't fit into memory and crunch it down so that it can. More on that to come.
-
 
 # Additional Resources
